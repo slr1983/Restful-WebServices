@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.sumit.restfulwebservices.models.Post;
 import com.sumit.restfulwebservices.models.User;
 
 @Component
@@ -44,6 +45,16 @@ public class UserDao {
 		return null;
 
 	}
+	
+	/*
+	 * public List<Post> getPostsByUserId(Integer userId) {
+	 * 
+	 * User user = getUserById(userId);
+	 * 
+	 * return user.getPosts();
+	 * 
+	 * }
+	 */
 
 	public void deleteUserById(Integer userId) {
 
@@ -94,6 +105,10 @@ public class UserDao {
 		LOGGER.debug("Added new  User : " + user.getName());
 		return getUserById(user.getId());
 
+	}
+	
+	public UserDao() {
+		LOGGER.debug("Default Constructor UserDao");
 	}
 
 }
